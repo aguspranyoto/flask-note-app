@@ -27,7 +27,7 @@ def login():
 
 
 
-    return render_template("login.html")
+    return render_template("login.html", user=current_user)
 
 @auth.route('/logout')
 @login_required
@@ -65,7 +65,7 @@ def sign_up():
 
             flash('Account created!', category='success')
 
-            return redirect(url_for('views.home'))
+            return redirect(url_for('views.home', user=current_user))
             
             
 
